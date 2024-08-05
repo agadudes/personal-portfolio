@@ -1,9 +1,27 @@
-@media screen and (max-width: 1200px) {
-  #desktop-nav {
+@media (max-width: 1000px) {
+  .desktop {
     display: none;
   }
 
-  #hamburger-nav {
+  /* #mobile-nav {
     display: flex;
+  } */
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+@media (max-width: 700px) {
+  #mobile-nav {
+    width: 100vw;
+  }
+
+  .mobile-logo {
+    height: 7vh;
+  }
+
+  .mobile-label {
+    height: 1.5rem;
   }
 }
