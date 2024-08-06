@@ -1,11 +1,16 @@
-/* Imports */
+/* IMPORTS */
 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Seaweed+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Seaweed+Script&family=Zeyada&display=swap");
+/* "Josepin Sans, sans-serif"     - Base Font
+   "Red Hat Display, sans-serif"  - Accent Font
+   "Seaweed Script, cursive"      - Decorative Font
+   "Zeyada", cursive"             - Decorative Font Alt
+*/
 
-/* General Styles */
+/* GENERAL STYLES */
 
+/* -- Palette */
 :root {
-  /* Palette */
   --background-main: #c7b198;
   --background-alt-dark: #746355;
   --background-alt-light: #b5a18a;
@@ -15,9 +20,11 @@
   --accent-alt: #596e79;
 }
 
+/* -- Reset and Initial Styles */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -37,43 +44,46 @@ img {
   display: block;
 }
 
-/* Transitions */
+/* -- General Transitions */
 
-a, .btn {
+a,
+.btn,
+.logo,
+.close-icon,
+.menu-icon {
   transition: all 300ms ease;
 }
 
-/* Navigations */
-nav, .nav-links {
+/* NAVIGATIONS */
+nav,
+.nav-links {
   display: flex;
 }
 
-/* Desktop Navigations */
+/* -- Desktop Navigations */
 
 #desktop-nav {
   height: 16vh;
   justify-content: space-around;
   align-items: center;
   padding: 0 5vw;
+  margin-top: 2rem;
 }
 
 .logo {
   font-size: 3rem;
   font-weight: 800;
-  /* padding-left: 5vh; */
 }
 
-.nav-links a{
+.mobile-logo:hover,
+.logo:hover {
+  cursor: default;
+}
+
+.nav-links a {
   font-size: clamp(1rem, 1.7rem, 2rem);
   text-decoration: none;
   color: var(--main-font-color);
-}
-
-.desktop a:hover {
-  color: var(--accent-alt);
-  text-decoration: underline;
-  text-decoration-thickness: 0.2rem;
-  text-underline-offset: 0.7rem;
 }
 
 .desktop {
@@ -83,12 +93,19 @@ nav, .nav-links {
   align-items: center;
 }
 
+.desktop a:hover {
+  color: var(--accent-alt);
+  text-decoration: underline;
+  text-decoration-thickness: 0.2rem;
+  text-underline-offset: 0.7rem;
+}
+
 .desktop-link {
   width: 25%;
   text-align: center;
 }
 
-/* Mobile Navigations */
+/* -- Mobile Navigations */
 
 .menu-icon {
   display: none;
@@ -97,15 +114,21 @@ nav, .nav-links {
 
 .menu-icon:hover {
   cursor: pointer;
+  background-color: var(--background-alt-dark);
 }
 
 .close-icon {
+  align-self: stretch;
   font-size: 3rem;
   height: 16vh;
   text-align: center;
   vertical-align: center;
   line-height: 16vh;
-  /* background-color: blue; */
+}
+
+.close-icon:hover {
+  cursor: pointer;
+  background-color: var(--background-alt-dark);
 }
 
 .mobile-label {
@@ -114,7 +137,7 @@ nav, .nav-links {
 }
 
 .mobile-logo {
-  font-family: 'Seaweed Script', cursive;
+  font-family: "Seaweed Script", cursive;
   border-radius: 7vh;
   font-size: 2rem;
   text-align: center;
@@ -125,12 +148,6 @@ nav, .nav-links {
   background-color: var(--main-font-color);
   color: var(--background-alt-light);
   overflow: hidden;
-}
-
-.mobile {
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
 }
 
 #mobile-nav {
@@ -144,7 +161,129 @@ nav, .nav-links {
   top: 0;
   right: 0;
   width: 40vw;
+  overflow: hidden;
   height: 100vh;
   z-index: 999;
   transition: all 350ms ease-in-out;
+}
+
+.mobile {
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.mobile-link {
+  padding: 1rem 0;
+}
+
+.mobile-link:hover {
+  background-color: var(--accent-alt);
+  color: var(--background-alt-light);
+}
+
+/* Content Sections */
+
+section {
+  padding-top: 4vh;
+  height: 80vh;
+  margin: 0 5vw;
+  box-sizing: border-box;
+  min-height: fit-content;
+}
+
+/* ABOUT SECTION */
+#profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  height: 70vh;
+  width: 90vw;
+  /* background-color: hsla(9, 57%, 50%, 0.3); */
+}
+
+.profile__pic {
+  height: 400px;
+  width: 400px;
+  border-radius: 400px;
+}
+
+.profile-text-container {
+  width: 30vw;
+  font-family: "Red Hat Display", sans-serif;
+  text-align: center;
+}
+
+.profile-text  {
+  font-size: 2rem;
+}
+
+.profile-title {
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.btn-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.btn-container-mobile {
+  display: none;
+}
+.profile-button {
+  background-color: var(--background-alt-dark);
+  border: 2px solid black;
+  border-radius: 10rem;
+  font-size: clamp(1rem, 1.5rem, 1.7rem);
+  font-weight: 600;
+  height: 6vh;
+  width: clamp(350px, 5vw, 9vw);
+  /* padding-top: 1rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  text-decoration: none;
+  color: var(--accent-light);
+}
+
+.profile-button:hover {
+  background-color: var(--accent-alt);
+  color: var(--background-main);
+}
+
+.profile-button-mobile {
+  margin: 2rem 0;
+  padding-top: 0.6rem;
+  font-size: 2rem;
+  height: 4rem;
+  width: 4rem;
+  border: 5px solid var(--main-font-color);
+  border-radius: 4rem;
+  color: var(--background-main);
+  background-color: var(--background-alt-dark);
+}
+
+.profile-button-mobile:hover {
+  background-color: var(--accent-alt);
+  color: var(--accent-dark);
+  transition: all 300ms ease-in-out;
+}
+
+#socials-container {
+  display: flex;
+  height: 3rem;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.socials-icon:hover {
+  cursor: pointer;
+  filter: invert();
+  transition: all 300ms ease-in-out;
 }

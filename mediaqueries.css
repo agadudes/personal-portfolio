@@ -1,20 +1,42 @@
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
+  /* NAVIGATION BAR */
   .desktop {
     display: none;
   }
 
-  /* #mobile-nav {
-    display: flex;
-  } */
-
   .menu-icon {
     display: block;
+  }
+
+  /* SECTION -- ABOUT */
+  #profile {
+    flex-direction: column;
+  }
+
+  .profile__pic {
+    height: clamp(20vh, 30vh, 300px);
+    width: clamp(20vh, 30vh, 300px);
+  }
+
+  .profile-text-container {
+    width: 95vw;
+  }
+
+  .profile-button {
+    width: clamp(200px, 7vw, 12vw);
   }
 }
 
 @media (max-width: 700px) {
-  #mobile-nav {
-    width: 100vw;
+  /* NAVIGATION BAR */
+  #desktop-nav {
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-family: "Red Hat Display", sans-serif;
+    text-transform: lowercase;
+    font-size: 1.5rem;
   }
 
   .mobile-logo {
@@ -23,5 +45,30 @@
 
   .mobile-label {
     height: 1.5rem;
+  }
+
+  #mobile-nav {
+    width: 100vw;
+  }
+
+  /* SECTION -- ABOUT */
+
+  .btn-container {
+    display: none;
+  }
+
+  .btn-container-mobile {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .profile-text {
+    font-size: 1.5rem;
+  }
+
+  .profile-title {
+    font-size: 4rem;
+    text-transform: uppercase;
   }
 }

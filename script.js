@@ -1,3 +1,4 @@
+//Navigation menu scripts
 var mobileMenu = document.getElementById("mobile-nav");
 function toggleOpen(){
   mobileMenu.style.display = "flex";
@@ -12,6 +13,6 @@ function resetMobile() {
     mobileMenu.style.display = "none";
   }
 }
-
+// Hide mobile navigation on screen resize
 window.onresize = resetMobile;
 resetMobile();
