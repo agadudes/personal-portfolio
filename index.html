@@ -11,40 +11,34 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./mediaqueries.css" />
   </head>
+
+
   <body>
     <!-- NAVIGATION -->
     <nav id="desktop-nav">
-      <div class="mobile-logo">Aa</div>
-      <div class="logo">Aga Aquino</div>
-      <div class="desktop nav-links">
-        <a class="desktop-link" href="#about">About</a>
-        <a class="desktop-link" href="#experience">Experience</a>
-        <a class="desktop-link" href="#projects">Projects</a>
-        <a class="desktop-link" href="#contact">Contact</a>
-      </div>
-      <span class="material-symbols-outlined menu-icon" onclick="toggleOpen()"
-        >menu</span
-      >
-    </nav>
-    <nav id="mobile-nav">
-      <span class="material-symbols-outlined close-icon" onclick="toggleClose()"
-        >close</span
-      >
-      <span class="mobile-label">Aga Aquino</span>
-      <div>
-        <div class="mobile-logo">Aa</div>
-      </div>
-      <div class="mobile nav-links">
-        <a class="mobile-link" href="#about">About</a>
-        <a class="mobile-link" href="#experience">Experience</a>
-        <a class="mobile-link" href="#projects">Projects</a>
-        <a class="mobile-link" href="#contact">Contact</a>
+      <input type="checkbox" name="" id="menu-active">
+      <label for="menu-active" class="open-menu-button">
+        <span class="material-symbols-outlined menu-icon">menu</span>
+      </label>
+      
+      <label id="overlay" for="menu-active"></label>
+      <div class="container-links">
+        <label for="menu-active" class="close-menu-button">
+          <span class="material-symbols-outlined menu-icon">close</span>
+        </label>
+
+        <a href="#home" class="home-link">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
       </div>
     </nav>
 
+
     <!-- SECTIONS -->
     <!-- --ABOUT ME  -->
-    <section id="profile">
+    <!-- <section id="profile">
       <img class="profile__pic" src="./assets/profile-pic.jpg" alt="Aga Aquino" />
       <div class="profile-text-container">
         <div class="profile-description">
@@ -85,7 +79,39 @@
           />
         </div>
       </div>
-    </section>
+    </section> -->
+
+    <div class="container-pages">
+      <section id="home">
+        <div class="arrow-up">
+          <span class="material-symbols-outlined">
+          keyboard_arrow_up
+          </span>
+        </div>
+        <div class="container-content">HOME</div>
+        <div class="arrow-dn">
+          <span class="material-symbols-outlined">
+            keyboard_arrow_down
+            </span>
+        </div>
+      </section>
+      <section id="about">
+        <div class="arrow-up">
+          <span class="material-symbols-outlined">
+          keyboard_arrow_up
+          </span>
+        </div>
+        <div class="container-content">ABOUT</div>
+        <div class="arrow-dn">
+          <span class="material-symbols-outlined">
+            keyboard_arrow_down
+            </span>
+        </div>
+      </section>
+      <section id="projects">Projects</section>
+      <section id="experience">Experience</section>
+      <section id="contact">Contact</section>
+    </div>
 
     <script src="./script.js"></script>
   </body>
