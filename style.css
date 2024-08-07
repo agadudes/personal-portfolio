@@ -1,10 +1,11 @@
 /* IMPORTS */
 
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Seaweed+Script&family=Zeyada&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Righteous&family=Seaweed+Script&family=Zeyada&display=swap');
 /* "Josepin Sans, sans-serif"     - Base Font
    "Red Hat Display, sans-serif"  - Accent Font
    "Seaweed Script, cursive"      - Decorative Font
    "Zeyada", cursive"             - Decorative Font Alt
+   "Righteous", sans-serif        - Heading
 */
 
 /* GENERAL STYLES */
@@ -57,24 +58,8 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-}
-
-.container-pages {
-  margin-top: 16vh;
-  height: 84vh;
-}
-
-section {
-  height: 100%;
-}
-
-.arrow-up, .arrow-dn {
-  flex: 1;
-}
-
-.container-main {
-  width: 100%;
-  flex: 8;
+  z-index: 10;
+  padding: 0 1rem;
 }
 
 .container-links {
@@ -100,6 +85,32 @@ nav a:hover {
   color: var(--font-color__dark);
 }
 
+#home-title {
+  display: none;
+}
+
+#container-logo {
+  margin-right: auto;
+  width: 70px;
+  height: 70px;
+  display: none;
+}
+
+#logo {
+  font-size: 3rem;
+  font-family: "Seaweed Script", cursive;
+  color: var(--background-alt__dark);
+  
+  background-color: var(--background-alt__light);
+  border-radius: 70px;
+  width: 70px;
+  height: 70px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 nav .home-link {
   margin-right: auto;
 }
@@ -108,65 +119,164 @@ nav .home-link {
   font-size: 2.5rem;
   color: var(--font-color__light);
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 #menu-active {
   display: none;
 }
 
-.open-menu-button, .close-menu-button {
-  display: none;
+
+/* CONTENT STYLES */
+/* -- General Content Properties */
+.container-pages {
+  margin-top: clamp(3rem, 16vh, 100px);
+  height: calc(100vh - clamp(3rem, 16vh, 100px));
 }
 
-@media (max-width: 480px) {
-  .container-links {
-    flex-direction: column;
-    align-items: flex-start;
+section {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease-in-out;
+}
 
-    position: fixed;
-    top: 0;
-    right: -100%;
-    z-index: 10;
-    width: 80vw;
+/* -- Home Page Styles */
 
-    background-color: var(--background-alt__light);
-    box-shadow: -5px 0 5px --background-alt__dark;
+.container-home__img {
+  grid-area: _image;
+  height: clamp(50px, 45vh, 600px);
+  width: auto;
+}
 
-    transition: 400ms ease-in-out;
+.container-home__text {
+  grid-area: _text-description;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.container-home__text p {
+  font-size: clamp(1rem, 1.8vw, 4rem);
+  color: var(--background-alt__dark);
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.container-home__text h1 {
+  font-size: clamp(2.4rem, 3vw, 6rem);
+  font-family: "Righteous", sans-serif;
+}
+
+.container-home__text h2 {
+  font-size: clamp(1.4rem, 2.2vw, 5rem);
+  color: var(--background-alt__dark);
+}
+
+.container-home__buttons {
+  grid-area: _buttons;
+  display: flex;
+  padding: 1rem 0;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+  .container-home__buttons a {
+    padding: 1rem;
+    border-radius: 2rem;
+
+    border: 2px solid var(--background-alt__dark);
+    background-color: var(--background-alt__dark);
+    color: var(--font-color__light);
+    text-decoration: none;
+
+    min-width: fit-content;
+    flex: 1;
   }
 
-  nav a {
-    height: auto;
-    width: 100%;
-    padding: 20px 30px;
-    justify-content: flex-end;
-  }
-
-  .open-menu-button, .close-menu-button {
-    padding: 2rem;
-    display: block;
-  }
-
-  .close-menu-button {
-    width: 100%;
-    text-align: right;
-  }
-
-  .menu-icon:hover {
+  .container-home__buttons a:hover {
+    border: 2px solid var(--font-color__dark);
     background-color: var(--accent-alt);
+    color: var(--font-color__dark);
   }
 
-  #menu-active:checked ~ .container-links {
-    right: 0;
+.container-home__socials {
+  grid-area: _socials;
+  display: flex;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+
+  .container-home__socials a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.6rem;
+    gap: 0.5rem;
   }
 
-  #menu-active:checked ~ #overlay {
-    /* background-color: green; */
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9;
+  .container-home__socials a:hover {
+    filter: invert();
+    transition: all 300ms ease-in-out;
   }
+
+.__home {
+  display: grid;
+  grid-template-columns: 45vw 25vw 20vw;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "_image . ."
+    "_image _text-description _text-description"
+    "_image _buttons ."
+    "_image _socials ."
+    "_image . ."
+    ;
+}
+
+.container-home__img img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.container-home__socials img{
+  width: clamp(50px, 3vw, 100px);
+}
+
+/* -- Arrow Navigation Properties */
+.arrow {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.arrow a {
+  text-decoration: none;
+}
+
+.arrow-up, .arrow-dn {
+  background-color: var(--background-alt__dark);
+  color: var(--font-color__light);
+  text-align: center;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  font-weight: 800;
+  border-radius: 20px;
+}
+
+.arrow-up:hover, .arrow-dn:hover {
+  background-color: var(--accent-alt);
+  color: var(--font-color__dark);
+}
+
+.open-menu-button, .close-menu-button {
+  display: none;
 }

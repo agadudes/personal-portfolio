@@ -12,105 +12,124 @@
     <link rel="stylesheet" href="./mediaqueries.css" />
   </head>
 
-
   <body>
     <!-- NAVIGATION -->
     <nav id="desktop-nav">
-      <input type="checkbox" name="" id="menu-active">
+      <div id="container-logo">
+        <h1 id="logo">Aa</h1>
+      </div>
+      <input type="checkbox" name="" id="menu-active" />
       <label for="menu-active" class="open-menu-button">
         <span class="material-symbols-outlined menu-icon">menu</span>
       </label>
-      
+
       <label id="overlay" for="menu-active"></label>
       <div class="container-links">
         <label for="menu-active" class="close-menu-button">
           <span class="material-symbols-outlined menu-icon">close</span>
         </label>
 
-        <a href="#home" class="home-link">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" id="page-title" class="home-link"
+          ><h1>aga aquino</h1></a
+        >
+        <a href="#home" id="home-title" class="home-link">Home</a>
+        <a href="#about" class="oth-link">About</a>
+        <a href="#projects" class="oth-link">Projects</a>
+        <a href="#experience" class="oth-link">Experience</a>
+        <a href="#contact" class="oth-link">Contact</a>
       </div>
     </nav>
 
-
-    <!-- SECTIONS -->
-    <!-- --ABOUT ME  -->
-    <!-- <section id="profile">
-      <img class="profile__pic" src="./assets/profile-pic.jpg" alt="Aga Aquino" />
-      <div class="profile-text-container">
-        <div class="profile-description">
-          <p class="profile-text">Hello, I'm</p>
-          <p class="profile-title">Aga Aquino</p>
-          <p class="profile-text">.NET Developer</p>
-          <div class="btn-container">
-            <a class="profile-button" href="./assets/resume-example.pdf">Download CV</a>
-            <a class="profile-button" href="./#contact">Contact Me</a>
-          </div>
-          <div class="btn-container-mobile">
-            <a href="./assets/resume-example.pdf"
-              alt="Download CV">
-              <span class="material-symbols-outlined profile-button-mobile">
-                  contact_page
-              </span>
-            </a>
-            <a href="./#contact"
-              alt="Contact Me">
-              <span class="material-symbols-outlined profile-button-mobile">
-                alternate_email
-              </span>
-            </a>
-          </div>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="socials-icon"
-            onclick="location.href='https://fi.linkedin.com/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="socials-icon"
-            onclick="location.href='https://github.com/'"
-          />
-        </div>
-      </div>
-    </section> -->
-
     <div class="container-pages">
       <section id="home">
-        <div class="arrow-up">
-          <span class="material-symbols-outlined">
-          keyboard_arrow_up
-          </span>
+        <div class="container-content __home">
+          <div class="container-home__img">
+            <img src="./assets/about-pic.png" alt="" />
+          </div>
+          <div class="container-home__text">
+            <p>Hello! I am</p>
+            <h1>Aga Aquino</h1>
+            <h2>.Net Developer</h2>
+          </div>
+          <div class="container-home__buttons">
+            <a href="#">Let's Talk!</a>
+            <a href="#">Download CV</a>
+          </div>
+          <div class="container-home__socials">
+            <a href="">
+              <img src="./assets/github-mark.svg" alt="" />
+              <p>Github</p>
+            </a>
+            <a href="">
+              <img src="./assets/iconmonstr-linkedin-3.svg" alt="" />
+              <p>LinkedIn</p>
+            </a>
+            <!-- TODO: Add more Social Logos Here later -->
+          </div>
         </div>
-        <div class="container-content">HOME</div>
-        <div class="arrow-dn">
-          <span class="material-symbols-outlined">
-            keyboard_arrow_down
+        <div class="arrow">
+          <a href="#about">
+            <span class="material-symbols-outlined arrow-dn">
+              keyboard_arrow_down
             </span>
+          </a>
         </div>
       </section>
       <section id="about">
-        <div class="arrow-up">
-          <span class="material-symbols-outlined">
-          keyboard_arrow_up
-          </span>
-        </div>
         <div class="container-content">ABOUT</div>
-        <div class="arrow-dn">
-          <span class="material-symbols-outlined">
-            keyboard_arrow_down
+        <div class="arrow">
+          <a href="#home">
+            <span class="material-symbols-outlined arrow-up">
+              keyboard_arrow_up
             </span>
+          </a>
+          <a href="#projects">
+            <span class="material-symbols-outlined arrow-dn">
+              keyboard_arrow_down
+            </span>
+          </a>
         </div>
       </section>
-      <section id="projects">Projects</section>
-      <section id="experience">Experience</section>
-      <section id="contact">Contact</section>
+      <section id="projects">
+        <div class="container-content">PROJECTS</div>
+        <div class="arrow">
+          <a href="#about">
+            <span class="material-symbols-outlined arrow-up">
+              keyboard_arrow_up
+            </span>
+          </a>
+          <a href="#experience">
+            <span class="material-symbols-outlined arrow-dn">
+              keyboard_arrow_down
+            </span>
+          </a>
+        </div>
+      </section>
+      <section id="experience">
+        <div class="container-content">EXPERIENCE</div>
+        <div class="arrow">
+          <a href="#projects">
+            <span class="material-symbols-outlined arrow-up">
+              keyboard_arrow_up
+            </span>
+          </a>
+          <a href="#contact">
+            <span class="material-symbols-outlined arrow-dn">
+              keyboard_arrow_down
+            </span>
+          </a>
+        </div>
+      </section>
+      <section id="contact">
+        <div class="container-content">CONTACT</div>
+        <div class="arrow">
+          <a href="#experience">
+            <span class="material-symbols-outlined arrow-dn">
+              keyboard_arrow_up
+            </span>
+          </a>
+        </div>
+      </section>
     </div>
 
     <script src="./script.js"></script>
