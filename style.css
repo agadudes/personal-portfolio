@@ -18,6 +18,10 @@
   --font-color__dark: #0d0807;
   --font-color__light: #bcb5b3;
   --accent-alt: #aeaeae;
+
+  /* Transparent */
+  --background-main-tr:  rgba(199, 177, 152, 0.4);
+  --background-alt__dark-tr:  rgba(35, 35, 35, 0.4);
 }
 
 /* -- Reset and Initial Styles */
@@ -37,7 +41,9 @@ html {
 }
 
 body { 
-  background-color: var(--background-main);
+  background: url(./assets/background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 
@@ -161,6 +167,8 @@ section {
     "_image _socials"
     "_image ."
     ;
+  background-color: var(--background-main-tr);
+  border-radius: 50px;
 }
 
 .container-home__img {
@@ -257,29 +265,34 @@ section {
 /* About Me Formatting */
 
 .__about {
-  margin: 0 7vw;
+  margin: 10svh 0;
   height: 70svh;
-  width: 100%;
+  width: 90vw;
 
   display: grid;
   gap: 0.5rem;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 2fr 1fr;
+
+  background-color: var(--background-alt__dark-tr);
+  border-radius: 50px;
 }
 
 .container-about__name {
   grid-column: span 2;
   padding-top: 1rem;
+  color: var(--font-color__dark);
 }
 
 #about__name {
   font-size: 3rem;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Righteous", sans-serif;
 }
 
 .container-about__img {
   grid-column: span 2;
   grid-row: span 2;
+  margin: 2rem;
 }
 
     .container-about__img img {
@@ -287,16 +300,19 @@ section {
       width: 100%;
       object-fit: cover;
       object-position: right;
+      border-radius: 50px;
     }
 
 .container-about__story {
+  padding-top: 2rem;
+
   grid-column-start: 3;
   grid-column-end: span 2;
   grid-row-start: 2;
 }
 
 .container-about__experience {
-  background-color: var(--background-alt__dark);
+  background-color: var(--background-alt__light);
   grid-column: span 4;
   grid-row-start: 3;
 
