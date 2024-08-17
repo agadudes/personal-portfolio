@@ -22,7 +22,7 @@
       top: 0;
       right: -100%;
       z-index: 10;
-      width: 50vw;
+      width: 70vw;
   
       background-color: var(--background-alt__light);
       box-shadow: -5px 0 5px --background-alt__dark;
@@ -70,77 +70,88 @@
       z-index: 9;
     }
 
-    /* CONTENT */
-    .container-home__buttons {
-      width: 100%;
-    }
-    .arrow {
-        flex-direction: column;
-        bottom: 36vh;
-    }
-
-    .arrow-up, .arrow-dn {
-        width: 40px;
-        font-size: 2rem;
-        font-weight: 400;
-    }
-
-    /* --HOME PAGE */
+    /* --HOME PAGE MOBILE */
     .__home {
-        display: flex;
-        flex-direction: column;
-        padding: 0 2vw;
-    }
-
-    .container-home__text, .container-home__socials {
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* --ABOUT PAGE */
-    .__about {
+      align-self: flex-start;
       display: block;
-      height: 100%;
     }
 
-    .container-about__name > *:not(h1) {
-      display: none;
+    .__home > *:not(.container-home__socials) {
+      margin-bottom: 10px;
     }
 
-    .container-about__name {
-      text-align: center;
+    .container-home__text p {
+      margin-bottom: -30px;
     }
 
-    #about__name {
-      font-family: "Zeyada", cursive;
+    .container-home__text h1 {
+      margin-bottom: 0;
+    }
+
+    .container-home__img {
+      justify-content: center;
+    }
+      .container-home__img img {
+        height: clamp(100px, 200px, 300px);
+        width: clamp(100px, 200px, 300px);
+      }
+    
+    .container-home__text {
+      align-items: center;
+    }
+
+    .container-home__buttons {
+      justify-content: center;
+    }
+
+      .container-home__buttons a {
+        font-size: 0.7rem;
+      }
+
+    /* -- ABOUT PAGE MOBILE */
+
+    .__about {
+      align-self: flex-start;
+      display: block;
+      padding: 10px;
     }
 
     .container-about__img {
-      height: 25svh;
+      height: 20svh;
     }
 
-    .container-about__experience {
-      /* flex-direction: column; */
-      align-items: center;
-      gap: 1rem;
+    .container-about__name {
+      font-size: 1rem;
+      text-align: center;
     }
 
     .container-about__story {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
+    }
+
+    .exp-content {
+      transform-style: none;
+      width: 150px;
+      height: auto;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .exp-content:hover {
+      transform: none;
+    }
+
+    .exp-card {
       text-align: center;
-      margin-bottom: 2rem;
+      position: unset;
+      backface-visibility: unset;
     }
 
-    .__experience-card1, .__experience-card2 {
-      gap: 0.5rem;
-      font-size: 0.5rem;
+    ._exp-card--front {
+      display: none;
     }
 
-    .icons-skill {
-      height: 30px;
-      width: 30px;
-      padding: 0;
-      border: none;
-      border-radius: 0;
+    ._exp-card--back {
+      transform: none;
     }
-  }
+}
