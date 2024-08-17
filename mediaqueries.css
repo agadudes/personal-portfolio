@@ -108,50 +108,67 @@
         font-size: 0.7rem;
       }
 
-    /* -- ABOUT PAGE MOBILE */
+  /* -- ABOUT PAGE MOBILE */
 
-    .__about {
-      align-self: flex-start;
-      display: block;
-      padding: 10px;
-    }
+  .__about {
+    align-self: flex-start;
+    display: block;
+    padding: 10px;
+  }
 
-    .container-about__img {
-      height: 20svh;
-    }
+  .container-about__img {
+    height: 20svh;
+  }
 
-    .container-about__name {
-      font-size: 1rem;
-      text-align: center;
-    }
+  .container-about__name {
+    font-size: 1rem;
+    text-align: center;
+  }
 
-    .container-about__story {
-      font-size: 0.8rem;
-    }
+  .container-about__story {
+    font-size: 0.8rem;
+  }
 
-    .exp-content {
-      transform-style: none;
-      width: 150px;
-      height: auto;
-      flex-direction: column;
-      gap: 0.1rem;
-    }
+  .exp-content {
+    transform-style: none;
+    width: 45vw;
+    height: 200px;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
 
-    .exp-content:hover {
-      transform: none;
-    }
+  .exp-content:hover {
+    transform: none;
+  }
 
-    .exp-card {
-      text-align: center;
-      position: unset;
-      backface-visibility: unset;
-    }
+  .exp-card {
+    flex-wrap: wrap;
+    position: unset;
+    backface-visibility: unset;
+  }
 
-    ._exp-card--front {
-      display: none;
-    }
+  ._exp-card--front {
+    display: none;
+  }
 
-    ._exp-card--back {
-      transform: none;
-    }
+  ._exp-card--back {
+    transform: none;
+  }
+
+  .icons-skill {
+    padding: 10px;
+    gap: 0.5rem;
+    --icons-skill-size_mo: 80px;
+    height: var(--icons-skill-size_mo);
+    width: var(--icons-skill-size_mo);
+    background-color: var(--background-alt__dark-tr);
+    color: var(--font-color__light);
+
+    filter: drop-shadow(1px 1px 1px black)
+  }
+    
+}
+
+@media (max-width: 1400px) {
+  
 }

@@ -142,12 +142,12 @@ nav .home-link {
 /* -- General Content Properties */
 .container-pages {
   margin-top: clamp(3rem, 16vh, 100px);
-  height: calc(100vh - clamp(3rem, 16vh, 100px));
+  height: calc(100svh - clamp(3rem, 16svh, 100px));
 }
 
 section {
   position: relative;
-  height: 100svh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -311,11 +311,15 @@ section {
 }
 
 .exp-content {
-  width: 200px;
-  height: 150px;
+  width: clamp(200px, 10vw, 18rem);
+  height: calc(5vw + 1svh);
+
+  /* background: url(./assets/texture_blueprint.png); */
+  
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1rem;
 
   transition: transform 1s;
@@ -326,12 +330,15 @@ section {
     cursor: default;
     transform: rotateX(180deg);
     transition: 0.5s;
+    
   }
 
   .exp-card {
     position: absolute;
     height: 100%;
     width: 100%;
+    font-size: clamp(0.5rem, 1rem, 1.2rem);
+
     background-color: var(--background-alt__dark);
     color: var(--font-color__light);
     backface-visibility: hidden;
@@ -352,7 +359,7 @@ section {
   }
 
 .icons-skill {
-  --icons-skill-size: 30px;
+  --icons-skill-size: 60px;
   height: var(--icons-skill-size);
   width: var(--icons-skill-size);
 }
@@ -361,7 +368,7 @@ section {
 .arrow {
   position: absolute;
   right: 10px;
-  bottom: 110px;
+  bottom: 10px;
   display: flex;
   gap: 5px;
 
