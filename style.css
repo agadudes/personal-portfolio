@@ -353,7 +353,7 @@ section {
 
   ._exp-card--back {
     background: var(--background-alt__light);
-    color: var(--font-color__dark);
+    color: var(--background-alt__dark);
     transform: rotateX( 180deg);
     
   }

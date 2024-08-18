@@ -132,7 +132,7 @@
   .exp-content {
     transform-style: none;
     width: 45vw;
-    height: 200px;
+    height: 10svh;
     flex-direction: column;
     gap: 0.1rem;
   }
@@ -156,9 +156,9 @@
   }
 
   .icons-skill {
-    padding: 10px;
-    gap: 0.5rem;
-    --icons-skill-size_mo: 80px;
+    padding: 6px;
+    gap: 10px;
+    --icons-skill-size_mo: 40px;
     height: var(--icons-skill-size_mo);
     width: var(--icons-skill-size_mo);
     background-color: var(--background-alt__dark-tr);
