@@ -1,6 +1,10 @@
 
 @media (max-width: 650px) {
 
+    body {
+      overflow: unset;
+    }
+
     /* NAVIGATION */
     #page-title {
         display: none;
@@ -72,7 +76,6 @@
 
     /* --HOME PAGE MOBILE */
     .__home {
-      align-self: flex-start;
       display: block;
     }
 
@@ -111,7 +114,6 @@
   /* -- ABOUT PAGE MOBILE */
 
   .__about {
-    align-self: flex-start;
     display: block;
     padding: 10px;
   }
@@ -166,9 +168,25 @@
 
     filter: drop-shadow(1px 1px 1px black)
   }
-    
-}
-
-@media (max-width: 1400px) {
   
+  /* -- Skills Page Styles */
+
+  .container-skills-card {
+    grid-template-columns: 80%;
+    grid-template-rows: repeat(auto-fit, 120px);
+    padding: 0rem;
+
+  }
+
+  .skills-card {
+    /* height: clamp(40px, 80px, auto); */
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+
+    height: 120px;
+  }
+
+  .arrow {
+    display: none;
+  }
 }

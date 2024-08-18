@@ -32,7 +32,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: clamp(3rem, 16svh, 100px);
+  scroll-padding-top: clamp(3rem, 25svh, 100px);
 
   
   font-family: "Josefin Sans", sans-serif;
@@ -43,6 +43,8 @@ body {
   background: url(./assets/background.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+  overflow:hidden;
 }
 
 
@@ -141,8 +143,8 @@ nav .home-link {
 /* CONTENT STYLES */
 /* -- General Content Properties */
 .container-pages {
-  margin-top: clamp(3rem, 16vh, 100px);
-  height: calc(100svh - clamp(3rem, 16svh, 100px));
+  margin-top: clamp(3rem, 25svh, 100px);
+  height: calc(100svh - clamp(3rem, 25svh, 100px));
 }
 
 section {
@@ -252,6 +254,7 @@ section {
   .container-home__socials a {
     display: flex;
     flex-direction: column;
+    align-items: center;
     color: var(--font-color__dark);
     text-decoration: none;
   }
@@ -262,15 +265,12 @@ section {
   }
 
   .icons-soc {
-    height: 80px;
-    width: 80px;
+    --icons-soc-size: clamp(40px, 60px, 80px);
+    height: var(--icons-soc-size);
+    width: var(--icons-soc-size);
   }
 
 /* -- About Page Styles */
-/* .__about > * {
-  border: 1px solid red;
-} */
-
 .__about {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -279,9 +279,10 @@ section {
 
   width: clamp(720px, 70vw, 90vw);
 }
+
 .container-about__img {
   grid-column: 1;
-  grid-row: span 3;
+  grid-row: span 4;
   height: 100%;
   width: 100%;
 }
@@ -298,6 +299,7 @@ section {
 .container-about__name {
   font-size: 1.5rem;
   grid-column: 2;
+  align-self: flex-end;
 }
 
 .contaienr-about__story {
@@ -306,15 +308,13 @@ section {
 
 .container-about_exp {
   display: flex;
-  height: 150px;
+  height: auto;
   justify-content: space-evenly;
 }
 
 .exp-content {
   width: clamp(200px, 10vw, 18rem);
   height: calc(5vw + 1svh);
-
-  /* background: url(./assets/texture_blueprint.png); */
   
   display: flex;
   justify-content: center;
@@ -362,6 +362,81 @@ section {
   --icons-skill-size: 60px;
   height: var(--icons-skill-size);
   width: var(--icons-skill-size);
+}
+
+._about-more{
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+}
+  ._about-more a {
+    height: 80%;
+    width: 60%;
+    border: 5px solid var(--font-color__dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    color: var(--font-color__dark);
+    background-color: var(--background-alt__light);
+    border-radius: 15px;
+  }
+
+/* -- Skills Page Styles */
+#skills {
+  align-items: flex-start;
+}
+
+.container-skills-card {
+  /* border: 1px solid blue; */
+  width: 100vw;
+  height: 66svh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 380px);
+  grid-template-rows: repeat(auto-fit, 1fr);
+  padding: 30px 0;
+
+  gap: 10px;
+  justify-content: center;
+
+  overflow: scroll;
+}
+
+.skills-card {
+  height: 100%;
+  width: 100%;
+
+  padding: 0rem;
+  background-color: var(--background-alt__light);
+  background-attachment: fixed;
+  border: 2px solid --font-color_dark;
+  border-radius: 10px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  transition: all 300ms;
+
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+
+  scroll-snap-type: mandatory;
+}
+
+.skills-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  filter: contrast(10px);
+}
+
+.skills-title {
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.skills-description {
+  font-size: 0.75rem;
 }
 
 /* -- Arrow Navigation Properties */
